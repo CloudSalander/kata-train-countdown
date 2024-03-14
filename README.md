@@ -1,5 +1,7 @@
 ﻿# kata-train-countdown
 
+ **Kata 31 per l'especialitat fullstackPHP 14-3-24**
+
 Viatgem en un tren en marxa, en flames i, possiblement, ple de zombies. Hem de frenar-lo com sigui. Per això, necessitem activar el fre d'emergència.  Per a fer-ho tenim això:
 
 ![fre_1](trainCode.png)
