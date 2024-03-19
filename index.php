@@ -19,16 +19,14 @@ function unlockEmergencyBrake(bool $show_partial_sum = true, int $brake_code = F
     return false;
 }
 
-$brake1_unlocked = false;
-while(!$brake1_unlocked) {
-    echo "AAAAHHH!! We're going to die!!!".PHP_EOL;
-    $brake_unlocked = unlockEmergencyBrake(true,FIRST_BRAKE_CODE);
+$brakes = [FIRST_BRAKE_CODE => true, SECOND_BRAKE_CODE => false];
+foreach($brakes as $brake_code => $display_number) {
+    $brake_unlocked = false;
+    while(!$brake_unlocked) {
+        echo "AAAAHHH!! We're going to die!!!".PHP_EOL;
+        $brake_unlocked = unlockEmergencyBrake($display_number,$brake_code);
+    }
 }
-//TODO: Duplicated logic! Refactor.
-$brake2_unlocked = false;
-while(!$brake2_unlocked) {
-    echo "AAAAHHH!! We're going to die!!!".PHP_EOL;
-    $brake2_unlocked = unlockEmergencyBrake(false,SECOND_BRAKE_CODE);
-}
+
 echo "UUFF!! So close...";
 ?>
