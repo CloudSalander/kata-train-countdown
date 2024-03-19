@@ -13,13 +13,14 @@ function unlockEmergencyBrake(bool $show_partial_sum = true, int $brake_code = F
         $sum += $number;
         if($show_partial_sum) echo $sum."/".$brake_code.PHP_EOL;
         ++ $numbers_entered;
+        echo "You entered {$numbers_entered} of ".INPUTS_QTY.PHP_EOL;
     }
     if($sum == $brake_code) return true;
     return false;
 }
 
 $brake1_unlocked = false;
-while(!$brake_unlocked) {
+while(!$brake1_unlocked) {
     echo "AAAAHHH!! We're going to die!!!".PHP_EOL;
     $brake_unlocked = unlockEmergencyBrake(true,FIRST_BRAKE_CODE);
 }
